@@ -3,4 +3,7 @@
     <string name="home_nav_bar">Home</string>
     <string name="passing_nav_bar">Passing</string>
     <string name="rushing_nav_bar">Rushing</string>
+    <string name="enter_year">Enter Year</string>
+    <string name="passing_stats">Passing Stats</string>
+    <string name="rushing_stats">Rushing Stats</string>
 </resources>
