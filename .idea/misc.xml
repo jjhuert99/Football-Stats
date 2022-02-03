@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/home_fragment.xml" value="0.35625" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/passing_fragment.xml" value="0.35625" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/rushing_fragment.xml" value="0.35625" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/menu/nav_menu.xml" value="0.35625" />
       </map>
     </option>
   </component>

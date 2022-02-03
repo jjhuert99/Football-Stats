@@ -10,4 +10,14 @@
         android:name="com.example.footballstats.ui.home.HomeFragment"
         android:label="home_fragment"
         tools:layout="@layout/home_fragment" />
+    <fragment
+        android:id="@+id/passingFragment"
+        android:name="com.example.footballstats.ui.passing.PassingFragment"
+        android:label="passing_fragment"
+        tools:layout="@layout/passing_fragment" />
+    <fragment
+        android:id="@+id/rushingFragment"
+        android:name="com.example.footballstats.ui.rushing.RushingFragment"
+        android:label="rushing_fragment"
+        tools:layout="@layout/rushing_fragment" />
 </navigation>
