@@ -1,32 +1,29 @@
 package com.example.footballstats.ui.passing
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.footballstats.R
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.example.footballstats.databinding.PassingFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PassingFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = PassingFragment()
-    }
-
-    private lateinit var viewModel: PassingViewModel
+    val viewModel: PassingViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.passing_fragment, container, false)
-    }
+        val binding = PassingFragmentBinding.inflate(inflater)
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PassingViewModel::class.java)
-        // TODO: Use the ViewModel
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        return binding.root
     }
 
 }

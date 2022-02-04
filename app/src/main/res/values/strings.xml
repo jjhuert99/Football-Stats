@@ -6,4 +6,6 @@
     <string name="enter_year">Enter Year</string>
     <string name="passing_stats">Passing Stats</string>
     <string name="rushing_stats">Rushing Stats</string>
+    <string name="enter_stats_portal">Enter Stats Portal</string>
+    <string name="enter">Enter</string>
 </resources>
