@@ -1,6 +1,7 @@
 package com.example.footballstats.ui.rushing
 
 import android.app.Application
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.footballstats.network.TeamRepo
 import kotlinx.coroutines.Dispatchers
@@ -11,5 +12,6 @@ class RushingViewModel @Inject constructor(
     private val TeamRepo: TeamRepo,
     private val dispatcher: Dispatchers
 ): ViewModel() {
-    // TODO: Implement the ViewModel
+    var searchYear = MutableLiveData<String>()
+
 }
