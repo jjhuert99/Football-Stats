@@ -1,14 +1,19 @@
 package com.example.footballstats.network
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class TeamRepoImpl : TeamRepo {
+class TeamRepoImpl @Inject constructor(
+    private val dispatcher: Dispatchers,
+    private val retroObject: TeamEndPoints
+) : TeamRepo {
 
-    override suspend fun getTeamRecord()
-            : ServiceResult<List<TeamRecord>> {
+    override suspend fun getTeamRecord(year: String)
+            : ServiceResult<List<TeamRecord?>?> {
         return withContext(dispatcher.IO) {
-            val dataResponse = retroObject.getTeamRecord()
-            if (dataResponse.isSuccesful) {
+            val dataResponse = retroObject.getTeamRecord(year = year)
+            if (dataResponse.isSuccessful) {
                 ServiceResult.Succes(dataResponse.body())
             } else {
                 ServiceResult.Error(Exception(dataResponse.errorBody().toString()))
@@ -16,11 +21,10 @@ class TeamRepoImpl : TeamRepo {
         }
     }
 
-
-    override suspend fun getTeamPassing(): ServiceResult<List<TeamPassing>> {
+    override suspend fun getTeamPassing(year: String): ServiceResult<List<TeamPassing?>?> {
         return withContext(dispatcher.IO) {
-            val dataResponse = retroObject.getTeamPassing()
-            if (dataResponse.isSuccesful) {
+            val dataResponse = retroObject.getTeamPassing(year = year)
+            if (dataResponse.isSuccessful) {
                 ServiceResult.Succes(dataResponse.body())
             } else {
                 ServiceResult.Error(Exception(dataResponse.errorBody().toString()))
@@ -28,11 +32,10 @@ class TeamRepoImpl : TeamRepo {
         }
     }
 
-
-    override suspend fun getTeamRushing(): ServiceResult<List<TeamRushing>> {
+    override suspend fun getTeamRushing(year: String): ServiceResult<List<TeamRushing?>?> {
         return withContext(dispatcher.IO) {
-            val dataResponse = retroObject.getTeamRushing()
-            if (dataResponse.isSuccesful) {
+            val dataResponse = retroObject.getTeamRushing(year = year)
+            if (dataResponse.isSuccessful) {
                 ServiceResult.Succes(dataResponse.body())
             } else {
                 ServiceResult.Error(Exception(dataResponse.errorBody().toString()))
