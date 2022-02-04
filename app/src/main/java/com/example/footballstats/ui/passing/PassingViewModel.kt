@@ -1,7 +1,17 @@
 package com.example.footballstats.ui.passing
 
+import android.app.Application
 import androidx.lifecycle.ViewModel
+import com.example.footballstats.network.TeamRepo
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
+import javax.inject.Inject
 
-class PassingViewModel : ViewModel() {
+@HiltViewModel
+class PassingViewModel @Inject constructor(
+    private val app: Application,
+    private val TeamRepo: TeamRepo,
+    private val dispatcher: Dispatchers
+) : ViewModel() {
     // TODO: Implement the ViewModel
 }
