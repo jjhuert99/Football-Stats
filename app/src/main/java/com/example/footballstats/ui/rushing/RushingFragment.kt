@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import com.example.footballstats.databinding.RushingFragmentBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-
 @AndroidEntryPoint
 class RushingFragment : Fragment() {
 
