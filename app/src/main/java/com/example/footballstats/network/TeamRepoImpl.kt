@@ -10,7 +10,7 @@ class TeamRepoImpl @Inject constructor(
 ) : TeamRepo {
 
     override suspend fun getTeamRecord(year: String)
-            : ServiceResult<List<TeamRecord?>?> {
+            : ServiceResult<List<TeamRecord>?> {
         return withContext(dispatcher.IO) {
             val dataResponse = retroObject.getTeamRecord(year = year)
             if (dataResponse.isSuccessful) {
@@ -21,7 +21,7 @@ class TeamRepoImpl @Inject constructor(
         }
     }
 
-    override suspend fun getTeamPassing(year: String): ServiceResult<List<TeamPassing?>?> {
+    override suspend fun getTeamPassing(year: String): ServiceResult<List<TeamPassing>?> {
         return withContext(dispatcher.IO) {
             val dataResponse = retroObject.getTeamPassing(year = year)
             if (dataResponse.isSuccessful) {
@@ -32,7 +32,7 @@ class TeamRepoImpl @Inject constructor(
         }
     }
 
-    override suspend fun getTeamRushing(year: String): ServiceResult<List<TeamRushing?>?> {
+    override suspend fun getTeamRushing(year: String): ServiceResult<List<TeamRushing>?> {
         return withContext(dispatcher.IO) {
             val dataResponse = retroObject.getTeamRushing(year = year)
             if (dataResponse.isSuccessful) {
