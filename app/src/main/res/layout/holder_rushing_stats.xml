@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="teamRushing"
+            type="com.example.footballstats.network.TeamRushing" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:background="@color/post_grey">
+
+            <TextView
+                android:id="@+id/teamName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{teamRushing.name}"
+                tools:text="Dallas Cowboys"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                style="@style/stats_text" />
+
+            <TextView
+                android:id="@+id/passingYards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Rushing Yards: : ` + teamRushing.yards}"
+                tools:text="Dallas Cowboys"
+                android:paddingVertical="4dp"
+                style="@style/stats_text"
+                app:layout_constraintTop_toBottomOf="@id/teamName"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/passingTDs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Rushing Touchdowns: : ` + teamRushing.touchdowns}"
+                tools:text="Dallas Cowboys"
+                style="@style/stats_text"
+                app:layout_constraintTop_toBottomOf="@id/passingYards"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/space_between_posts"
+            android:layout_width="match_parent"
+            android:layout_height="14dp" />
+
+    </LinearLayout>
+</layout>
+

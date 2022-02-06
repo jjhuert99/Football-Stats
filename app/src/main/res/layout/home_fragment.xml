@@ -59,13 +59,16 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/teamsRecordRV"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/yearTextField"
+            app:layout_constraintTop_toBottomOf="@id/enterButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:paddingHorizontal="10dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="1"/>
+            app:spanCount="1"
+            app:teamRecords="@{viewModel.post}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

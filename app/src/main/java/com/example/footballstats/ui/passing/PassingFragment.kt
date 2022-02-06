@@ -23,6 +23,8 @@ class PassingFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        binding.teamPassingdRV.adapter = PassingAdapter()
         binding.enterButton.setOnClickListener{
             Toast.makeText(requireContext(), "Year is ${viewModel.searchYear.value}", Toast.LENGTH_LONG).show()
         }

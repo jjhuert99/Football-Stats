@@ -12,19 +12,19 @@ interface TeamEndPoints {
         @Header("x-rapidapi-host") host: String = "nfl-team-stats.p.rapidapi.com",
         @Header("x-rapidapi-key") key: String = "4093b899f7mshd9a518c450bf536p18434ajsn27101561a8ee",
         @Path("year") year: String
-    ): Response<List<TeamRecord>?>
+    ): Response<List<TeamRecord>>
 
     @GET("v1/nfl-stats/teams/passing-stats/offense/{year}")
     suspend fun getTeamPassing(
         @Header("x-rapidapi-host") host: String = "nfl-team-stats.p.rapidapi.com",
         @Header("x-rapidapi-key") key: String = "4093b899f7mshd9a518c450bf536p18434ajsn27101561a8ee",
         @Path("year") year: String
-    ): Response<List<TeamPassing>?>
+    ): Response<List<TeamPassing>>
 
     @GET("v1/nfl-stats/teams/rushing-stats/offense/{year}")
     suspend fun getTeamRushing(
         @Header("x-rapidapi-host") host: String = "nfl-team-stats.p.rapidapi.com",
         @Header("x-rapidapi-key") key: String = "4093b899f7mshd9a518c450bf536p18434ajsn27101561a8ee",
         @Path("year") year: String
-    ): Response<List<TeamRushing>?>
+    ): Response<List<TeamRushing>>
 }

@@ -7,4 +7,9 @@
         <item name="android:gravity">center</item>
         <item name="android:textSize">34sp</item>
     </style>
+
+    <style name="stats_text">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

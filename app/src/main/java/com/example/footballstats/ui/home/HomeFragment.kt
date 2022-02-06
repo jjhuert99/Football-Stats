@@ -24,6 +24,8 @@ class HomeFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        binding.teamsRecordRV.adapter = HomeAdapter()
         binding.enterButton.setOnClickListener{
             if(viewModel.searchYear.value.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Enter a Date between 1970 and 2019",Toast.LENGTH_LONG).show()

@@ -28,9 +28,13 @@ class HomeViewModel @Inject constructor(
     val status: LiveData<TeamStatus> = _status
 
     private val _post = MutableLiveData<List<TeamRecord>?>()
-    val post: LiveData<List<TeamRecord>?> = _post
+    val post: MutableLiveData<List<TeamRecord>?> = _post
 
     var searchYear = MutableLiveData<String?>()
+
+    init{
+        getTeamRecords()
+    }
 
     fun checkDate(date: String?): Boolean{
         if(date?.toInt()!! > 2019 || date?.toInt()!! < 1970){
