@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/home_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/holder_passing_data.xml" value="0.35625" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/holder_rushing_stats.xml" value="0.35625" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/holder_team_records.xml" value="0.35625" />
+        <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/home_fragment.xml" value="0.33" />
         <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/passing_fragment.xml" value="0.1" />
         <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/layout/rushing_fragment.xml" value="0.35625" />
         <entry key="..\:/Users/Julio Huerta/AndroidStudioProjects/FootballStats/app/src/main/res/menu/nav_menu.xml" value="0.35625" />

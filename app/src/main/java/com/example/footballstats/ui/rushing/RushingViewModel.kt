@@ -34,6 +34,8 @@ class RushingViewModel @Inject constructor(
 
     var searchYear = MutableLiveData<String>()
 
+    init{getTeamRushing()
+    }
     private fun getTeamRushing() {
         viewModelScope.launch(dispatcher.IO) {
             when (val response = TeamRepo.getTeamRushing(year = "2001")) {

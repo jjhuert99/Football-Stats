@@ -23,6 +23,8 @@ class RushingFragment : Fragment() {
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
+
+        binding.teamRushingRV.adapter = RushingAdapter()
         binding.enterButton.setOnClickListener{
             Toast.makeText(requireContext(), "Year is ${viewModel.searchYear.value}", Toast.LENGTH_LONG).show()
         }

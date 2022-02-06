@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="teamRecord"
+            type="com.example.footballstats.network.TeamRecord" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:background="@color/post_grey">
+
+        <TextView
+            android:id="@+id/teamName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{teamRecord.name}"
+            tools:text="Dallas Cowboys"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/stats_text" />
+
+        <TextView
+            android:id="@+id/teamWins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Wins: : ` + teamRecord.wins}"
+            tools:text="Dallas Cowboys"
+            android:paddingVertical="4dp"
+            style="@style/stats_text"
+            app:layout_constraintTop_toBottomOf="@id/teamName"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/teamLosses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{`Losses: : ` + teamRecord.losses}"
+            tools:text="Dallas Cowboys"
+            style="@style/stats_text"
+            app:layout_constraintTop_toBottomOf="@id/teamWins"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.legacy.widget.Space
+            android:id="@+id/space_between_posts"
+            android:layout_width="match_parent"
+            android:layout_height="14dp" />
+
+    </LinearLayout>
+</layout>
