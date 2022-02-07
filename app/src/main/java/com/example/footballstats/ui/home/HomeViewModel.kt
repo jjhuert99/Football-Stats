@@ -32,10 +32,6 @@ class HomeViewModel @Inject constructor(
 
     var searchYear = MutableLiveData<String?>()
 
-    init{
-        getTeamRecords()
-    }
-
     fun checkDate(date: String?): Boolean{
         if(date?.toInt()!! > 2019 || date?.toInt()!! < 1970){
             return false
@@ -43,9 +39,9 @@ class HomeViewModel @Inject constructor(
         return true
     }
 
-    private fun getTeamRecords() {
+    fun getTeamRecords(year: String) {
         viewModelScope.launch(dispatcher.IO) {
-            when (val response = TeamRepo.getTeamRecord(year = "2001")) {
+            when (val response = TeamRepo.getTeamRecord(year)) {
                 is ServiceResult.Succes -> {
                     _post.postValue(response.data)
                     _status.postValue(TeamStatus.DONE)

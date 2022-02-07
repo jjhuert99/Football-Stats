@@ -34,13 +34,16 @@ class PassingViewModel @Inject constructor(
 
     var searchYear = MutableLiveData<String>()
 
-    init{
-        getTeamPassing()
+    fun checkDate(date: String?): Boolean{
+        if(date?.toInt()!! > 2019 || date?.toInt()!! < 1970){
+            return false
+        }
+        return true
     }
 
-    private fun getTeamPassing() {
+    fun getTeamPassing(year: String) {
         viewModelScope.launch(dispatcher.IO) {
-            when (val response = TeamRepo.getTeamPassing(year = "2001")) {
+            when (val response = TeamRepo.getTeamPassing(year)) {
                 is ServiceResult.Succes -> {
                     _post.postValue(response.data)
                     _status.postValue(TeamStatus.DONE)
