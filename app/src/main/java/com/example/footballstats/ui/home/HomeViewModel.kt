@@ -33,8 +33,10 @@ class HomeViewModel @Inject constructor(
     var searchYear = MutableLiveData<String?>()
 
     fun checkDate(date: String?): Boolean{
-        if(date?.toInt()!! > 2019 || date?.toInt()!! < 1970){
-            return false
+        if (date != null) {
+            if(date.toInt() > 2019 || date.toInt() < 1970){
+                return false
+            }
         }
         return true
     }
