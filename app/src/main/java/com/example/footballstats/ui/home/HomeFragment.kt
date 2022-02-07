@@ -19,25 +19,25 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val binding = HomeFragmentBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        binding.teamsRecordRV.adapter = HomeAdapter()
         binding.enterButton.setOnClickListener{
             if(viewModel.searchYear.value.isNullOrEmpty()){
                 Toast.makeText(requireContext(), "Enter a Date between 1970 and 2019",Toast.LENGTH_LONG).show()
             }
             else if(viewModel.checkDate(viewModel.searchYear.value)){
-                Toast.makeText(requireContext(), "Year is ${viewModel.searchYear.value}",Toast.LENGTH_LONG).show()
+                viewModel.getTeamRecords(viewModel.searchYear.value.toString())
 
             }else{
                 Toast.makeText(requireContext(), "Enter a Date between 1970 and 2019",Toast.LENGTH_LONG).show()
 
             }
         }
+
+        binding.teamsRecordRV.adapter = HomeAdapter()
 
         return binding.root
     }

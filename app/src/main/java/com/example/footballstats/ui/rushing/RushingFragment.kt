@@ -26,7 +26,16 @@ class RushingFragment : Fragment() {
 
         binding.teamRushingRV.adapter = RushingAdapter()
         binding.enterButton.setOnClickListener{
-            Toast.makeText(requireContext(), "Year is ${viewModel.searchYear.value}", Toast.LENGTH_LONG).show()
+            if(viewModel.searchYear.value.isNullOrEmpty()){
+                Toast.makeText(requireContext(), "Enter a Date between 1970 and 2019",Toast.LENGTH_LONG).show()
+            }
+            else if(viewModel.checkDate(viewModel.searchYear.value)){
+                viewModel.getTeamRushing(viewModel.searchYear.value.toString())
+
+            }else{
+                Toast.makeText(requireContext(), "Enter a Date between 1970 and 2019",Toast.LENGTH_LONG).show()
+
+            }
         }
         return binding.root
     }
